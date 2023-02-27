@@ -10,48 +10,125 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./src/page-template.js");
 
-const employeesArray = []
+const employees = []
 
 // Create manager
 
-inquirer.prompt([{
-  //manager questions
-}]).then(response => {
-  // populate manager info
-  // promptForNexEmployee ()
-})
+inquirer
+  .prompt([
+    {
+      type: 'input',
+      message: "What is the manager's name:",
+      name: 'name',
+    },
+    {
+      type: 'input',
+      message: "What is the manager's ID:",
+      name: 'id',
+    },
+    {
+      type: 'input',
+      message: "What is the manager's email address:",
+      name: 'email',
+    },
+    {
+      type: 'input',
+      message: "What is the manager's office number:",
+      name: 'officeNumber',
+    },
+  ])
+  .then((response) => { 
+    const manager = new Manager(response.name, response.id, response.email, response.officeNumber)
+    employees.push(manager);
+    promptForNextEmployee() 
+  })
 
 const promptForNextEmployee = () => {
-  inquirer.prompt([{
-      // choice of 3
-  }]).then(response => {
-      // if engineer
-      //    promptForEngineer
-      // else if intern
-      //    promptForIntern
-      // else
-      //    use the functionality from page-template to generate the team
-  })
-}
+    inquirer.prompt([
+      {
+        type: 'list',
+        message: 'Wha type of team member do you want to add?',
+        name: 'function',
+        choices: ['Engineer', 'Intern', 'Finish building the team',]
+      },
+  
+    ]).then(response => {
+      if (response.function === 'Engineer') {
+        promptForEngineer()
+      } else if (response.function === 'Intern') {
+        promptForIntern()
+      } else {
+        buildPage()
+      }
+    })
+  }
 
 const promptForEngineer = () => {
-  inquirer.prompt([{
-      //engineer questions
-  }]).then(response => {
-      // add new engineer to employees array
-      // promptForNextEmployee
-  })
-}
+    inquirer.prompt([
+      {
+        type: 'input',
+        message: "Enter the engineer's name:",
+        name: 'name',
+      },
+      {
+        type: 'input',
+        message: "Enter the engineer's ID:",
+        name: 'id',
+      },
+      {
+        type: 'input',
+        message: "Enter the engineer's email address:",
+        name: 'email',
+      },
+      {
+        type: 'input',
+        message: "Enter the engineer's GitHub username:",
+        name: 'github',
+      },
+  
+    ])
+      .then((response) => {
+        const engineer = new Engineer(response.name, response.id, response.email, response.github)
+        employees.push(engineer);
+        promptForNextEmployee()
+      })
+  }
+
 
 const promptForIntern = () => {
-  inquirer.prompt([{
-      //intern questions
-  }]).then(response => {
-      // add new intern to employees array
-      // promptForNextEmployee
-  })
-}
+    inquirer.prompt([
+      {
+        type: 'input',
+        message: "Enter the intern's name:",
+        name: 'name',
+      },
+      {
+        type: 'input',
+        message: "Enter the intern's ID:",
+        name: 'id',
+      },
+      {
+        type: 'input',
+        message: "Enter the intern's email address:",
+        name: 'email',
+      },
+      {
+        type: 'input',
+        message: "Enter the intern's school:",
+        name: 'school',
+      },
+    ])
+      .then((response) => {
+        const intern = new Intern(response.name, response.id, response.email, response.school,)
+        employees.push(intern);
+        promptForNextEmployee()
+      })
+  }
 
-const buildPage = () => {
-// render(myArrayOfTeamMembers)
-}
+  const buildPage = () => {
+    const html = render(employees)
+    fs.writeFile(outputPath, html, (err) => {
+      if (err) throw err;
+      console.log('Page created successfully!');
+    });
+  };
