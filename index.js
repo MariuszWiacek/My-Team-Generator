@@ -13,7 +13,8 @@ const render = require("./src/page-template.js");
 const employees = []
 
 
-console.log("Welcome to the -My Team- generator! Please Create your dream team ");
+console.log("Welcome to the -My Team- generator!"),
+console.log("Please Create your Dream Team");
 // Create manager
 inquirer
   .prompt([

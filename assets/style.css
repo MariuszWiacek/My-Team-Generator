@@ -1,7 +1,10 @@
 .team-heading {
   background: rgb(2,0,36);
-background: linear-gradient(264deg, rgba(2,0,36,1) 0%, rgba(255,0,0,1) 35%, rgba(89,0,0,1) 100%);
+background: linear-gradient(264deg, rgb(36, 0, 0) 0%, #720000c2 35%, rgba(89,0,0,1) 100%);
   color: #ffffff;
+  font-family: 'Baskerville', sans-serif;
+    font-weight: bold;
+    font-size:20px;
 }
 
 .team-area {
@@ -11,11 +14,13 @@ background: linear-gradient(264deg, rgba(2,0,36,1) 0%, rgba(255,0,0,1) 35%, rgba
 }
 
 .employee-card {
+  font-family: 'Baskerville', sans-serif;
+    font-weight: bold;
   margin: 1em;
   max-width: 280px;
   width: 90%;
   min-height: 22rem;
-  background-color: #007bff;
+  background-color: #720000c2;
   color: white;
   display: flex;
   flex-direction: column;
