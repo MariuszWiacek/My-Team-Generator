@@ -1,5 +1,6 @@
 .team-heading {
-  background-color: #e84855;
+  background: rgb(2,0,36);
+background: linear-gradient(264deg, rgba(2,0,36,1) 0%, rgba(255,0,0,1) 35%, rgba(89,0,0,1) 100%);
   color: #ffffff;
 }
 
