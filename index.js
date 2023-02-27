@@ -12,8 +12,9 @@ const render = require("./src/page-template.js");
 
 const employees = []
 
-// Create manager
 
+console.log("Welcome to the -My Team- generator! Please Create your dream team ");
+// Create manager
 inquirer
   .prompt([
     {
@@ -47,7 +48,7 @@ const promptForNextEmployee = () => {
     inquirer.prompt([
       {
         type: 'list',
-        message: 'Wha type of team member do you want to add?',
+        message: 'What type of team member do you want to add?',
         name: 'function',
         choices: ['Engineer', 'Intern', 'Finish building the team',]
       },
@@ -67,22 +68,22 @@ const promptForEngineer = () => {
     inquirer.prompt([
       {
         type: 'input',
-        message: "Enter the engineer's name:",
+        message: "What is the engineers's first name?",
         name: 'name',
       },
       {
         type: 'input',
-        message: "Enter the engineer's ID:",
+        message: "Please What is the engineer's ID:",
         name: 'id',
       },
       {
         type: 'input',
-        message: "Enter the engineer's email address:",
+        message: "What is the engineer's email address:",
         name: 'email',
       },
       {
         type: 'input',
-        message: "Enter the engineer's GitHub username:",
+        message: "What is the engineer's GitHub username:",
         name: 'github',
       },
   
@@ -99,22 +100,22 @@ const promptForIntern = () => {
     inquirer.prompt([
       {
         type: 'input',
-        message: "Enter the intern's name:",
+        message: "What is the intern's name:",
         name: 'name',
       },
       {
         type: 'input',
-        message: "Enter the intern's ID:",
+        message: "What is the intern's ID:",
         name: 'id',
       },
       {
         type: 'input',
-        message: "Enter the intern's email address:",
+        message: "What is the intern's email address:",
         name: 'email',
       },
       {
         type: 'input',
-        message: "Enter the intern's school:",
+        message: "What is the intern's school:",
         name: 'school',
       },
     ])
