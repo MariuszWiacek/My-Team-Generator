@@ -1,5 +1,5 @@
 # <p align="center">**My Team Generator**</p>
-  ##### <p align="center">*My Team Generator*</p>
+ 
   ## Table of Contents
   * [Description](#description)
   * [Usage](#usage)
@@ -34,7 +34,6 @@ npm install inquirer
     
 ### Screenshot
 ![Page Screenshot](assets/screenshot.png)
-The application runs from the command line as seen above.
 
 ## Tests
 To run tests on the application, install
