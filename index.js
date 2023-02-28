@@ -14,33 +14,33 @@ const employees = []
 
 
 console.log("Welcome to the -My Team- generator!"),
-console.log("Please Create your Dream Team");
+console.log("Please Create your Dream Team :");
 // Create manager
 inquirer
   .prompt([
     {
       type: 'input',
-      message: "What is the manager's name:",
+      message: "What is the manager's name?",
       name: 'name',
     },
     {
       type: 'input',
-      message: "What is the manager's ID:",
+      message: "What is the manager's ID?",
       name: 'id',
     },
     {
       type: 'input',
-      message: "What is the manager's email address:",
+      message: "What is the manager's email address?",
       name: 'email',
     },
     {
       type: 'input',
-      message: "What is the manager's office number:",
+      message: "What is the manager's office number?",
       name: 'officeNumber',
     },
   ])
   .then((response) => { 
-    const manager = new Manager(response.name, response.id, response.email, response.officeNumber)
+    const manager = new Manager(...Object.values(response))
     employees.push(manager);
     promptForNextEmployee() 
   })
@@ -76,23 +76,23 @@ const promptForEngineer = () => {
       },
       {
         type: 'input',
-        message: "Please What is the engineer's ID:",
+        message: "Please What is the engineer's ID?",
         name: 'id',
       },
       {
         type: 'input',
-        message: "What is the engineer's email address:",
+        message: "What is the engineer's email address?",
         name: 'email',
       },
       {
         type: 'input',
-        message: "What is the engineer's GitHub username:",
+        message: "What is the engineer's GitHub username?",
         name: 'github',
       },
   
     ])
       .then((response) => {
-        const engineer = new Engineer(response.name, response.id, response.email, response.github)
+        const engineer = new Engineer(...Object.values(response))
         employees.push(engineer);
         promptForNextEmployee()
       })
@@ -103,27 +103,27 @@ const promptForIntern = () => {
     inquirer.prompt([
       {
         type: 'input',
-        message: "What is the intern's name:",
+        message: "What is the intern's name?",
         name: 'name',
       },
       {
         type: 'input',
-        message: "What is the intern's ID:",
+        message: "What is the intern's ID?",
         name: 'id',
       },
       {
         type: 'input',
-        message: "What is the intern's email address:",
+        message: "What is the intern's email address?",
         name: 'email',
       },
       {
         type: 'input',
-        message: "What is the intern's school:",
+        message: "What is the intern's school?",
         name: 'school',
       },
     ])
       .then((response) => {
-        const intern = new Intern(response.name, response.id, response.email, response.school,)
+        const intern = new Intern(...Object.values(response))
         employees.push(intern);
         promptForNextEmployee()
       })
