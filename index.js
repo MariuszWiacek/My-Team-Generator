@@ -45,6 +45,8 @@ inquirer
     promptForNextEmployee() 
   })
 
+
+  // Question to add more employees or not
 const promptForNextEmployee = () => {
     inquirer.prompt([
       {
@@ -64,7 +66,7 @@ const promptForNextEmployee = () => {
       }
     })
   }
-
+// Engineer questions
 const promptForEngineer = () => {
     inquirer.prompt([
       {
@@ -96,7 +98,7 @@ const promptForEngineer = () => {
       })
   }
 
-
+// Intern Questions 
 const promptForIntern = () => {
     inquirer.prompt([
       {
@@ -126,7 +128,7 @@ const promptForIntern = () => {
         promptForNextEmployee()
       })
   }
-
+// CREATE HTML PAGE by rendering 
   const buildPage = () => {
     const html = render(employees)
     fs.writeFile(outputPath, html, (err) => {

@@ -3,8 +3,7 @@
 background: linear-gradient(264deg, rgb(36, 0, 0) 0%, #720000c2 35%, rgba(89,0,0,1) 100%);
   color: #ffffff;
   font-family: 'Baskerville', sans-serif;
-    font-weight: bold;
-    font-size:20px;
+  font-size:50%;
 }
 
 .team-area {
@@ -15,7 +14,7 @@ background: linear-gradient(264deg, rgb(36, 0, 0) 0%, #720000c2 35%, rgba(89,0,0
 
 .employee-card {
   font-family: 'Baskerville', sans-serif;
-    font-weight: bold;
+    /* font-weight: bold; */
   margin: 1em;
   max-width: 280px;
   width: 90%;
