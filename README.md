@@ -5,18 +5,25 @@
   * [Usage](#usage)
   * [Languages](#languages)
   * [Installation Instructions](#installation)
-  * [Collaboratores](#Contributing)
+  * [Screenshot](#Screenshot)
+  * [Tests](#Tests)
   * [License](#license)
   * [Contact Me](#Contact-me)
+  
   ## Description
   
+  Simple application that generates a webpage that displays your team's basic info so you can have have quick access to their emails and GitHub profiles.
+  This command-line application has been buit using Object-oriented programming (OOP) and Jest for running unit tests, and all test has been PASSED.
  
  ## Usage
+ 
   * Create your team in node.js
  
- ## Languages and programs
+ ## Languages 
+  * HTML
+  
+  * CSS
   * Javascript
-  * JQuery
   * node.js
 
 ## Installation
@@ -25,11 +32,7 @@ To use this application, please install:
 npm install inquirer
 ```
     
-## Usage
-After cloning the repo and installing the required npm packages, use the command line to navigate to the root of the application and run `node index`.  Follow prompts to add team members to your roster.  Only one manager can be added per team.  Your generated team roster page will be created in the `./dist` folder. 
-    
-
-### Screenshots
+### Screenshot
 ![Page Screenshot](assets/screenshot.png)
 The application runs from the command line as seen above.
 
@@ -40,3 +43,9 @@ npm install jest
 ```
 
 and run `npm run test` from the command line.
+
+# License
+  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) 
+  * Link: https://opensource.org/licenses/MIT
+  ### Contact me
+  * Profile: https://github.com/MariuszWiacek
